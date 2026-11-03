@@ -295,8 +295,8 @@ font-size: 12px;
 .eyebrow-line { width: 16px; flex-shrink: 0; }
 
 /* 説明文：ブロックは中央、行頭は左端をそろえる */
-.hero-lead { width: fit-content; margin: 0 auto 28px; text-align: left; }
-.hero-lead .ln { display: block; white-space: nowrap; }
+.hero-lead { width: fit-content; max-width: 100%; margin: 0 auto 28px; text-align: left; font-size: min(14px, 3.8vw); }
+.hero-lead .ln { display: block; }
 .hero-lead br { display: none; }
 
 .intro h2 { font-size: clamp(20px, 5.6vw, 28px); }
@@ -305,9 +305,6 @@ font-size: 12px;
 .intro-content, .value-grid, .contact-area { grid-template-columns: 1fr; gap: 24px; }
 .activity-item { grid-template-columns: 35px 1fr; }
 .site-footer { flex-direction: column; align-items: flex-start; }
-}
-@media (max-width: 360px) {
-.hero-lead { font-size: 13px; }
 }
 </style>
 </head>
@@ -353,7 +350,7 @@ PAGE 1: ABOUT (初期表示)
 <section class="section-wrap intro">
 <div class="section-kicker">01 — ABOUT US</div>
 <div class="intro-content">
-<h2><span class="nb">課題を共有し</span><span class="nb">学校を変える。</span></h2>
+<h2><span class="nb">課題を共有し</span><span class="nb">新しい学校をつくる。</span></h2>
 <div>
 <p>学校には、さまざまな課題や困りごとがあります。</p>
 <p>edgeは、そんな日々の小さな違和感や悩みを持ち寄り、互いの経験や考えを共有する場です。正解を急がず、違いを認めながら、よりよい学校のあり方を一緒に考えていきます。</p>
