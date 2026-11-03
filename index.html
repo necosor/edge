@@ -1,474 +1,475 @@
+
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="edgeは、学校に関わる人たちが課題や困りごとを共有し、誰もが居心地よく過ごせる学校を考える自由でゆるやかなプラットフォームです。">
-  <title>edge — 学校に、対話と余白を。</title>
-  
-  <!-- フォント読み込み -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="edgeは、学校に関わる人たちが課題や困りごとを共有し、誰もが居心地よく過ごせる学校を考える自由でゆるやかなプラットフォームです。">
+<title>edge — 学校に、対話と余白を。</title>
 
-  <style>
-    /* ==========================================
-       白を基調としたクリーン＆モダンデザイン (edge)
-       ========================================== */
-    :root {
-      --ink: #111111;
-      --muted: #666666;
-      --paper: #ffffff;
-      --light-gray: #f9f9f9;
-      --line: #e5e5e5;
-      --white: #ffffff;
-      --serif: Georgia, "Times New Roman", serif;
-    }
+<!-- フォント読み込み -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    * { 
-      box-sizing: border-box; 
-    }
-    
-    html, body {
-      width: 100%;
-      overflow-x: hidden;
-    }
+<style>
+/* ==========================================
+白を基調としたクリーン＆モダンデザイン (edge)
+========================================== */
+:root {
+--ink: #111111;
+--muted: #666666;
+--paper: #ffffff;
+--light-gray: #f9f9f9;
+--line: #e5e5e5;
+--white: #ffffff;
+--serif: Georgia, "Times New Roman", serif;
+}
 
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: "Noto Sans JP", sans-serif;
-      font-size: 15px;
-      line-height: 1.9;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    a { color: inherit; text-decoration: none; }
+* {
+box-sizing: border-box;
+}
 
-    /* Header */
-    .site-header {
-      height: 70px;
-      padding: 0 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(255, 255, 255, 0.95);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid var(--line);
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font: 700 20px "DM Sans", sans-serif;
-      letter-spacing: -.04em;
-      cursor: pointer;
-    }
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 30px;
-      height: 30px;
-      background: var(--ink);
-      color: white;
-      border-radius: 50%;
-      font: 700 16px Georgia;
-    }
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      font: 600 11px "DM Sans", sans-serif;
-      letter-spacing: .1em;
-    }
-    .nav a { color: var(--muted); transition: color .2s; cursor: pointer; }
-    .nav a:hover, .nav a.active { color: var(--ink); }
-    .nav-contact {
-      border: 1px solid var(--ink);
-      padding: 6px 12px;
-      border-radius: 2px;
-      color: var(--ink) !important;
-    }
-    .nav-contact:hover, .nav-contact.active { background: var(--ink); color: white !important; }
+html, body {
+width: 100%;
+overflow-x: hidden;
+}
 
-    /* Buttons */
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      min-width: 180px;
-      padding: 12px 18px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .04em;
-      border: 1px solid var(--ink);
-      cursor: pointer;
-      transition: all .2s;
-    }
-    .button:hover { transform: translateY(-2px); }
-    .button-dark { background: var(--ink); color: white; }
-    .button-dark:hover { background: #333; }
+body {
+margin: 0;
+background: var(--paper);
+color: var(--ink);
+font-family: "Noto Sans JP", sans-serif;
+font-size: 15px;
+line-height: 1.9;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+}
+a { color: inherit; text-decoration: none; }
 
-    /* ページの表示切り替え設定 */
-    main { flex: 1; width: 100%; }
-    .page-tab { display: none; width: 100%; }
-    .page-tab.active { display: block; }
+/* Header */
+.site-header {
+height: 70px;
+padding: 0 5%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: rgba(255, 255, 255, 0.95);
+position: sticky;
+top: 0;
+z-index: 100;
+border-bottom: 1px solid var(--line);
+}
+.brand {
+display: flex;
+align-items: center;
+gap: 8px;
+font: 700 20px "DM Sans", sans-serif;
+letter-spacing: -.04em;
+cursor: pointer;
+}
+.brand-mark {
+display: grid;
+place-items: center;
+width: 30px;
+height: 30px;
+background: var(--ink);
+color: white;
+border-radius: 50%;
+font: 700 16px Georgia;
+}
+.nav {
+display: flex;
+align-items: center;
+gap: 20px;
+font: 600 11px "DM Sans", sans-serif;
+letter-spacing: .1em;
+}
+.nav a { color: var(--muted); transition: color .2s; cursor: pointer; }
+.nav a:hover, .nav a.active { color: var(--ink); }
 
-    /* Hero */
-    .hero {
-      min-height: 450px;
-      padding: 60px 5% 40px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      background: #ffffff;
-      border-bottom: 1px solid var(--line);
-      overflow: hidden;
-    }
-    .hero-copy { max-width: 600px; z-index: 2; width: 100%; }
-    .eyebrow, .section-kicker {
-      font: 600 11px "DM Sans", sans-serif;
-      letter-spacing: .18em;
-      color: var(--muted);
-      text-transform: uppercase;
-    }
-    .eyebrow { display: flex; align-items: center; gap: 12px; }
-    .eyebrow-line { width: 30px; height: 1px; background: var(--muted); }
-    .hero h1 {
-      font-size: clamp(32px, 7vw, 64px);
-      line-height: 1.3;
-      letter-spacing: .02em;
-      margin: 20px 0;
-      font-weight: 700;
-      word-break: break-word;
-    }
-    .hero-lead { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+/* Buttons */
+.button {
+display: inline-flex;
+align-items: center;
+justify-content: space-between;
+min-width: 180px;
+padding: 12px 18px;
+font-size: 12px;
+font-weight: 600;
+letter-spacing: .04em;
+border: 1px solid var(--ink);
+cursor: pointer;
+transition: all .2s;
+}
+.button:hover { transform: translateY(-2px); }
+.button-dark { background: var(--ink); color: white; }
+.button-dark:hover { background: #333; }
 
-    /* Abstract Graphic Element */
-    .hero-art {
-      position: absolute;
-      width: 320px;
-      height: 320px;
-      right: 5%;
-      top: 50%;
-      transform: translateY(-50%);
-      pointer-events: none;
-    }
-    .art-circle {
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-    }
-    .circle-main {
-      width: 180px;
-      height: 180px;
-      background: var(--light-gray);
-      border-color: var(--ink);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      left: 70px;
-      top: 70px;
-    }
-    .circle-main span { font-size: 24px; font-weight: 600; color: var(--ink); }
+/* ページの表示切り替え設定 */
+main { flex: 1; width: 100%; }
+.page-tab { display: none; width: 100%; }
+.page-tab.active { display: block; }
 
-    /* Sections */
-    .section-wrap { max-width: 1100px; margin: auto; padding: 60px 5%; width: 100%; }
-    .intro-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 24px; }
-    .intro h2, .values-heading h2, .contact-note h2, .activities h2 {
-      font-size: clamp(22px, 5vw, 32px);
-      line-height: 1.5;
-      font-weight: 600;
-    }
+/* Hero */
+.hero {
+min-height: 450px;
+padding: 60px 5% 40px;
+position: relative;
+display: flex;
+align-items: center;
+background: #ffffff;
+border-bottom: 1px solid var(--line);
+overflow: hidden;
+}
+.hero { justify-content: center; }
+.hero-copy { max-width: 600px; z-index: 2; width: 100%; text-align: center; }
+@media (max-width: 1100px) { .hero-art { display: none; } }
+.eyebrow, .section-kicker {
+font: 600 11px "DM Sans", sans-serif;
+letter-spacing: .18em;
+color: var(--muted);
+text-transform: uppercase;
+}
+.eyebrow { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.eyebrow-line { width: 30px; height: 1px; background: var(--muted); }
+.hero h1 {
+font-size: clamp(32px, 7vw, 64px);
+line-height: 1.3;
+letter-spacing: .02em;
+margin: 20px 0;
+font-weight: 700;
+word-break: break-word;
+}
+.hero-lead { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
 
-    /* Values */
-    .values { background: var(--light-gray); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); width: 100%; }
-    .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
-    .value-card { padding: 24px; background: white; border: 1px solid var(--line); }
-    .value-no { font: 11px "DM Sans"; color: var(--muted); }
-    .value-icon { font: 28px Georgia; color: var(--ink); margin: 12px 0 6px; }
-    .value-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
-    .value-card p { color: var(--muted); font-size: 13px; margin: 0; }
+/* Abstract Graphic Element */
+.hero-art {
+position: absolute;
+width: 320px;
+height: 320px;
+right: 5%;
+top: 50%;
+transform: translateY(-50%);
+pointer-events: none;
+}
+.art-circle {
+position: absolute;
+border-radius: 50%;
+border: 1px solid var(--line);
+}
+.circle-main {
+width: 180px;
+height: 180px;
+background: var(--light-gray);
+border-color: var(--ink);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+left: 70px;
+top: 70px;
+}
+.circle-main span { font-size: 24px; font-weight: 600; color: var(--ink); }
 
-    /* Activities List */
-    .activity-list { margin-top: 24px; border-top: 1px solid var(--line); }
-    .activity-item {
-      display: grid;
-      grid-template-columns: 60px 1fr;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .activity-number { font: 15px "DM Sans"; font-weight: 700; color: var(--ink); }
-    .activity-item h3 { font-size: 18px; font-weight: 600; margin: 0 0 6px; }
-    .activity-item p { font-size: 13px; color: var(--muted); margin: 0 0 10px; }
-    .activity-tag { font: 9px "DM Sans"; letter-spacing: .12em; border: 1px solid var(--line); padding: 2px 6px; display: inline-block; }
+/* Sections */
+.section-wrap { max-width: 1100px; margin: auto; padding: 60px 5%; width: 100%; }
+.intro-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 24px; }
+.intro h2, .values-heading h2, .contact-note h2, .activities h2 {
+font-size: clamp(22px, 5vw, 32px);
+line-height: 1.5;
+font-weight: 600;
+}
 
-    /* Contact Form */
-    .contact-area { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; margin-top: 24px; }
-    .contact-form { display: flex; flex-direction: column; gap: 16px; width: 100%; }
-    .contact-form label { font-size: 12px; font-weight: 700; }
-    .contact-form input, .contact-form textarea {
-      width: 100%;
-      margin-top: 6px;
-      padding: 12px;
-      border: 1px solid var(--line);
-      background: var(--light-gray);
-      font-size: 14px;
-      outline: none;
-      -webkit-appearance: none;
-      border-radius: 0;
-    }
-    .contact-form input:focus, .contact-form textarea:focus {
-      background: white;
-      border-color: var(--ink);
-    }
+/* Values */
+.values { background: var(--light-gray); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); width: 100%; }
+.value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+.value-card { padding: 24px; background: white; border: 1px solid var(--line); }
+.value-no { font: 11px "DM Sans"; color: var(--muted); }
+.value-icon { font: 28px Georgia; color: var(--ink); margin: 12px 0 6px; }
+.value-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.value-card p { color: var(--muted); font-size: 13px; margin: 0; }
 
-    /* Footer */
-    .site-footer {
-      background: white;
-      border-top: 1px solid var(--line);
-      padding: 30px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-top: auto;
-      gap: 16px;
-    }
-    .footer-links { display: flex; gap: 16px; font: 600 11px "DM Sans"; }
+/* Activities List */
+.activity-list { margin-top: 24px; border-top: 1px solid var(--line); }
+.activity-item {
+display: grid;
+grid-template-columns: 60px 1fr;
+padding: 24px 0;
+border-bottom: 1px solid var(--line);
+}
+.activity-number { font: 15px "DM Sans"; font-weight: 700; color: var(--ink); }
+.activity-item h3 { font-size: 18px; font-weight: 600; margin: 0 0 6px; }
+.activity-item p { font-size: 13px; color: var(--muted); margin: 0 0 10px; }
+.activity-tag { font: 9px "DM Sans"; letter-spacing: .12em; border: 1px solid var(--line); padding: 2px 6px; display: inline-block; }
 
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      .site-header { padding: 0 4%; }
-      .nav { gap: 12px; font-size: 10px; }
-      .nav-contact { padding: 4px 8px; }
-      .hero-art { display: none; }
-      .hero { padding: 40px 4% 30px; min-height: auto; }
-      .section-wrap { padding: 40px 4%; }
-      .intro-content, .value-grid, .contact-area { grid-template-columns: 1fr; gap: 24px; }
-      .activity-item { grid-template-columns: 35px 1fr; }
-      .site-footer { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+/* Contact Form */
+.contact-area { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; margin-top: 24px; }
+.contact-form { display: flex; flex-direction: column; gap: 16px; width: 100%; }
+.contact-form label { font-size: 12px; font-weight: 700; }
+.contact-form input, .contact-form textarea {
+width: 100%;
+margin-top: 6px;
+padding: 12px;
+border: 1px solid var(--line);
+background: var(--light-gray);
+font-size: 14px;
+outline: none;
+-webkit-appearance: none;
+border-radius: 0;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+background: white;
+border-color: var(--ink);
+}
+
+/* Footer */
+.site-footer {
+background: white;
+border-top: 1px solid var(--line);
+padding: 30px 5%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+margin-top: auto;
+gap: 16px;
+}
+.footer-links { display: flex; gap: 16px; font: 600 11px "DM Sans"; }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+.site-header { padding: 0 4%; }
+.nav { gap: 12px; font-size: 10px; }
+.hero-art { display: none; }
+.hero { padding: 40px 4% 30px; min-height: auto; }
+.eyebrow { font-size: 10px; letter-spacing: .1em; gap: 8px; }
+.eyebrow-line { width: 16px; flex-shrink: 0; }
+.hero-lead { text-wrap: balance; }
+.hero-lead br { display: none; }
+.section-wrap { padding: 40px 4%; }
+.intro-content, .value-grid, .contact-area { grid-template-columns: 1fr; gap: 24px; }
+.activity-item { grid-template-columns: 35px 1fr; }
+.site-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
 </head>
 <body>
 
-  <!-- ヘッダー -->
-  <header class="site-header">
-    <div class="brand" onclick="switchPage('about')">
-      <span class="brand-mark">e.</span>
-      <span>edge</span>
-    </div>
-    <nav class="nav">
-      <a id="nav-about" class="active" onclick="switchPage('about')">ABOUT</a>
-      <a id="nav-activities" onclick="switchPage('activities')">ACTIVITIES</a>
-      <a id="nav-contact" class="nav-contact" onclick="switchPage('contact')">CONTACT <span>↗</span></a>
-    </nav>
-  </header>
+<!-- ヘッダー -->
+<header class="site-header">
+<div class="brand" onclick="switchPage('about')">
+<span class="brand-mark">e.</span>
+<span>edge</span>
+</div>
+<nav class="nav">
+<a id="nav-about" class="active" onclick="switchPage('about')">ABOUT</a>
+<a id="nav-activities" onclick="switchPage('activities')">ACTIVITIES</a>
+<a id="nav-contact" onclick="switchPage('contact')">CONTACT</a>
+</nav>
+</header>
 
-  <main>
-    <!-- ==========================================
-         PAGE 1: ABOUT (初期表示)
-         ========================================== -->
-    <div id="page-about" class="page-tab active">
-      <!-- ヒーローセクション -->
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-line"></span> A PLACE TO THINK ABOUT SCHOOL</p>
-          <h1>edge</h1>
-          <p class="hero-lead">学校に関わる一人ひとりが、安心して話し、考え、つながる。<br>edgeは、より居心地のよい学校を一緒につくるための<br>自由でゆるやかなプラットフォームです。</p>
-          <button class="button button-dark" onclick="switchPage('activities')">活動について知る <span>↗</span></button>
-        </div>
-        <div class="hero-art">
-          <div class="art-circle circle-main">
-            <span>dialogue</span>
-          </div>
-        </div>
-      </section>
+<main>
+<!-- ==========================================
+PAGE 1: ABOUT (初期表示)
+========================================== -->
+<div id="page-about" class="page-tab active">
+<!-- ヒーローセクション -->
+<section class="hero">
+<div class="hero-copy">
+<p class="eyebrow"><span class="eyebrow-line"></span> A PLACE TO THINK ABOUT SCHOOL <span class="eyebrow-line"></span></p>
+<h1>edge</h1>
+<p class="hero-lead">学校に関わる一人ひとりが、安心して話し、考え、つながる。<br>edgeは、より居心地のよい学校を一緒につくるための<br>自由でゆるやかなプラットフォームです。</p>
+<button class="button button-dark" onclick="switchPage('activities')">活動について知る <span>↗</span></button>
+</div>
+<div class="hero-art">
+<div class="art-circle circle-main">
+<span>dialogue</span>
+</div>
+</div>
+</section>
 
-      <!-- ABOUT US -->
-      <section class="section-wrap intro">
-        <div class="section-kicker">01 — ABOUT US</div>
-        <div class="intro-content">
-          <h2>「こうあるべき」から、<br>「どうしたらいい？」へ。</h2>
-          <div>
-            <p>学校には、立場や役割だけでは語りきれない、さまざまな課題や困りごとがあります。</p>
-            <p>edgeは、そんな日々の小さな違和感や悩みを持ち寄り、互いの経験や考えを共有する場です。正解を急がず、違いを認めながら、よりよい学校のあり方を一緒に考えていきます。</p>
-          </div>
-        </div>
-      </section>
+<!-- ABOUT US -->
+<section class="section-wrap intro">
+<div class="section-kicker">01 — ABOUT US</div>
+<div class="intro-content">
+<h2>「こうあるべき」から、<br>「どうしたらいい？」へ。</h2>
+<div>
+<p>学校には、立場や役割だけでは語りきれない、さまざまな課題や困りごとがあります。</p>
+<p>edgeは、そんな日々の小さな違和感や悩みを持ち寄り、互いの経験や考えを共有する場です。正解を急がず、違いを認めながら、よりよい学校のあり方を一緒に考えていきます。</p>
+</div>
+</div>
+</section>
 
-      <!-- OUR VALUES -->
-      <section class="values">
-        <div class="section-wrap">
-          <div class="section-kicker">02 — OUR VALUES</div>
-          <div class="values-heading">
-            <h2>大切にしたいこと。</h2>
-            <p>小さな対話から、学校を考える。</p>
-          </div>
-          <div class="value-grid">
-            <article class="value-card">
-              <span class="value-no">01</span>
-              <div class="value-icon">↔</div>
-              <h3>対等であること</h3>
-              <p>年齢や立場にとらわれず、一人ひとりの声を大切にします。</p>
-            </article>
-            <article class="value-card">
-              <span class="value-no">02</span>
-              <div class="value-icon">○</div>
-              <h3>自由であること</h3>
-              <p>堅苦しい決まりに縛られず、安心して話せる雰囲気をつくります。</p>
-            </article>
-            <article class="value-card">
-              <span class="value-no">03</span>
-              <div class="value-icon">✳</div>
-              <h3>一緒に考えること</h3>
-              <p>経験や知恵を持ち寄り、できることから少しずつ形にしていきます。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-    </div>
+<!-- OUR VALUES -->
+<section class="values">
+<div class="section-wrap">
+<div class="section-kicker">02 — OUR VALUES</div>
+<div class="values-heading">
+<h2>大切にしたいこと。</h2>
+<p>小さな対話から、学校を考える。</p>
+</div>
+<div class="value-grid">
+<article class="value-card">
+<span class="value-no">01</span>
+<div class="value-icon">↔</div>
+<h3>対等であること</h3>
+<p>年齢や立場にとらわれず、一人ひとりの声を大切にします。</p>
+</article>
+<article class="value-card">
+<span class="value-no">02</span>
+<div class="value-icon">○</div>
+<h3>自由であること</h3>
+<p>堅苦しい決まりに縛られず、安心して話せる雰囲気をつくります。</p>
+</article>
+<article class="value-card">
+<span class="value-no">03</span>
+<div class="value-icon">✳</div>
+<h3>一緒に考えること</h3>
+<p>経験や知恵を持ち寄り、できることから少しずつ形にしていきます。</p>
+</article>
+</div>
+</div>
+</section>
+</div>
 
-    <!-- ==========================================
-         PAGE 2: ACTIVITIES (活動内容)
-         ========================================== -->
-    <div id="page-activities" class="page-tab">
-      <section class="section-wrap">
-        <div class="section-kicker">02 — ACTIVITIES</div>
-        <h2>活動内容</h2>
-        <p style="color: var(--muted); margin-bottom: 30px;">話すことから始めてみる。気づきを共有し、次の一歩につなげる。</p>
+<!-- ==========================================
+PAGE 2: ACTIVITIES (活動内容)
+========================================== -->
+<div id="page-activities" class="page-tab">
+<section class="section-wrap">
+<div class="section-kicker">02 — ACTIVITIES</div>
+<h2>活動内容</h2>
+<p style="color: var(--muted); margin-bottom: 30px;">話すことから始めてみる。気づきを共有し、次の一歩につなげる。</p>
 
-        <div class="activity-list">
-          <article class="activity-item">
-            <span class="activity-number">01</span>
-            <div>
-              <h3>情報交換・対話</h3>
-              <p>学校や学級で感じている課題、日々の困りごとについて、経験や工夫を持ち寄って話し合います。</p>
-              <span class="activity-tag">SHARE IDEAS</span>
-            </div>
-          </article>
-          <article class="activity-item">
-            <span class="activity-number">02</span>
-            <div>
-              <h3>学び・学習</h3>
-              <p>誰もが居心地よく過ごせる学校づくりや、そのための仕組みについて、一緒に学び、考えます。</p>
-              <span class="activity-tag">LEARN TOGETHER</span>
-            </div>
-          </article>
-          <article class="activity-item">
-            <span class="activity-number">03</span>
-            <div>
-              <h3>関係機関への働きかけ</h3>
-              <p>話し合いから見えてきた課題を整理し、必要に応じて関係機関への働きかけにつなげます。</p>
-              <span class="activity-tag">TAKE ACTION</span>
-            </div>
-          </article>
-        </div>
+<div class="activity-list">
+<article class="activity-item">
+<span class="activity-number">01</span>
+<div>
+<h3>情報交換・対話</h3>
+<p>学校や学級で感じている課題、日々の困りごとについて、経験や工夫を持ち寄って話し合います。</p>
+<span class="activity-tag">SHARE IDEAS</span>
+</div>
+</article>
+<article class="activity-item">
+<span class="activity-number">02</span>
+<div>
+<h3>学び・学習</h3>
+<p>誰もが居心地よく過ごせる学校づくりや、そのための仕組みについて、一緒に学び、考えます。</p>
+<span class="activity-tag">LEARN TOGETHER</span>
+</div>
+</article>
+<article class="activity-item">
+<span class="activity-number">03</span>
+<div>
+<h3>関係機関への働きかけ</h3>
+<p>話し合いから見えてきた課題を整理し、必要に応じて関係機関への働きかけにつなげます。</p>
+<span class="activity-tag">TAKE ACTION</span>
+</div>
+</article>
+</div>
 
-        <div style="margin-top: 40px; padding: 24px; background: var(--light-gray); border: 1px solid var(--line);">
-          <h3 style="margin-top:0; font-size: 18px;">まずは、月に一度くらい。気軽に話せる場から。</h3>
-          <p style="color: var(--muted); margin-bottom: 0; font-size: 13px;">当面は、学校や学級に関わる違和感や困りごと、仕事の進め方などを共有する会を月1回程度開きたいと考えています。参加の仕方やテーマは、集まった人たちと相談しながら柔軟に考えていきます。</p>
-        </div>
-      </section>
-    </div>
+<div style="margin-top: 40px; padding: 24px; background: var(--light-gray); border: 1px solid var(--line);">
+<h3 style="margin-top:0; font-size: 18px;">まずは、月に一度くらい。気軽に話せる場から。</h3>
+<p style="color: var(--muted); margin-bottom: 0; font-size: 13px;">当面は、学校や学級に関わる違和感や困りごと、仕事の進め方などを共有する会を月1回程度開きたいと考えています。参加の仕方やテーマは、集まった人たちと相談しながら柔軟に考えていきます。</p>
+</div>
+</section>
+</div>
 
-    <!-- ==========================================
-         PAGE 3: CONTACT (お問い合わせ)
-         ========================================== -->
-    <div id="page-contact" class="page-tab">
-      <section class="section-wrap">
-        <div class="section-kicker">03 — CONTACT</div>
-        <div class="contact-area">
-          <div class="contact-note">
-            <h2>お問い合わせ</h2>
-            <p>edgeの活動に関心をお寄せいただき、ありがとうございます。<br>参加についてのご相談、ご質問など、お気軽にご連絡ください。</p>
-          </div>
-          <!-- Formspreeを利用した直接送信フォーム -->
-          <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <label>お名前<input name="name" type="text" placeholder="お名前を入力してください" required></label>
-            <label>メールアドレス<input name="email" type="email" placeholder="メールアドレスを入力してください" required></label>
-            <label>お問い合わせ内容<textarea name="message" rows="5" placeholder="メッセージをご入力ください" required></textarea></label>
-            <button class="button button-dark" type="submit">送信する <span>↗</span></button>
-            <p id="formStatus" style="font-size: 12px; color: var(--muted); margin-top: 8px;"></p>
-          </form>
-        </div>
-      </section>
-    </div>
-  </main>
+<!-- ==========================================
+PAGE 3: CONTACT (お問い合わせ)
+========================================== -->
+<div id="page-contact" class="page-tab">
+<section class="section-wrap">
+<div class="section-kicker">03 — CONTACT</div>
+<div class="contact-area">
+<div class="contact-note">
+<h2>お問い合わせ</h2>
+<p>edgeの活動に関心をお寄せいただき、ありがとうございます。<br>参加についてのご相談、ご質問など、お気軽にご連絡ください。</p>
+</div>
+<!-- Formspreeを利用した直接送信フォーム -->
+<form class="contact-form" id="contactForm" action="https://formspree.io/f/xzeeklvl" method="POST">
+<label>お名前<input name="name" type="text" placeholder="お名前を入力してください" required></label>
+<label>メールアドレス<input name="email" type="email" placeholder="メールアドレスを入力してください" required></label>
+<label>お問い合わせ内容<textarea name="message" rows="5" placeholder="メッセージをご入力ください" required></textarea></label>
+<button class="button button-dark" type="submit">送信する <span>↗</span></button>
+<p id="formStatus" style="font-size: 12px; color: var(--muted); margin-top: 8px;"></p>
+</form>
+</div>
+</section>
+</div>
+</main>
 
-  <!-- フッター -->
-  <footer class="site-footer">
-    <div class="brand" onclick="switchPage('about')">
-      <span class="brand-mark">e.</span>
-      <span>edge</span>
-    </div>
-    <div class="footer-links">
-      <a onclick="switchPage('about')">ABOUT</a>
-      <a onclick="switchPage('activities')">ACTIVITIES</a>
-      <a onclick="switchPage('contact')">CONTACT</a>
-    </div>
-    <p style="font-size: 11px; color: var(--muted); width: 100%; margin-top: 10px;">© <span id="year"></span> edge. All rights reserved.</p>
-  </footer>
+<!-- フッター -->
+<footer class="site-footer">
+<div class="brand" onclick="switchPage('about')">
+<span class="brand-mark">e.</span>
+<span>edge</span>
+</div>
+<div class="footer-links">
+<a onclick="switchPage('about')">ABOUT</a>
+<a onclick="switchPage('activities')">ACTIVITIES</a>
+<a onclick="switchPage('contact')">CONTACT</a>
+</div>
+<p style="font-size: 11px; color: var(--muted); width: 100%; margin-top: 10px;">© <span id="year"></span> edge. All rights reserved.</p>
+</footer>
 
-  <script>
-    // ページ切り替えスクリプト
-    function switchPage(pageName) {
-      document.querySelectorAll('.page-tab').forEach(tab => {
-        tab.classList.remove('active');
-      });
-      document.querySelectorAll('.nav a').forEach(nav => {
-        nav.classList.remove('active');
-      });
+<script>
+// ページ切り替えスクリプト
+function switchPage(pageName) {
+document.querySelectorAll('.page-tab').forEach(tab => {
+tab.classList.remove('active');
+});
+document.querySelectorAll('.nav a').forEach(nav => {
+nav.classList.remove('active');
+});
 
-      document.getElementById('page-' + pageName).classList.add('active');
-      const activeNav = document.getElementById('nav-' + pageName);
-      if (activeNav) activeNav.classList.add('active');
+document.getElementById('page-' + pageName).classList.add('active');
+const activeNav = document.getElementById('nav-' + pageName);
+if (activeNav) activeNav.classList.add('active');
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-    // 年の自動取得
-    document.getElementById("year").textContent = new Date().getFullYear();
+// 年の自動取得
+document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Formspreeを使った非同期送信処理
-    const form = document.getElementById("contactForm");
-    const status = document.getElementById("formStatus");
+// Formspreeを使った非同期送信処理
+const form = document.getElementById("contactForm");
+const status = document.getElementById("formStatus");
 
-    form.addEventListener("submit", async function(event) {
-      event.preventDefault();
-      const data = new FormData(event.target);
-      
-      status.textContent = "送信中...";
+form.addEventListener("submit", async function(event) {
+event.preventDefault();
+const data = new FormData(event.target);
 
-      fetch(event.target.action, {
-        method: form.method,
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          status.textContent = "メッセージを受け付けました。ありがとうございます！";
-          form.reset();
-        } else {
-          response.json().then(data => {
-            if (Object.hasOwn(data, 'errors')) {
-              status.textContent = data["errors"].map(error => error["message"]).join(", ");
-            } else {
-              status.textContent = "送信に失敗しました。Formspreeの設定URLをご確認ください。";
-            }
-          })
-        }
-      }).catch(error => {
-        status.textContent = "送信中にエラーが発生しました。";
-      });
-    });
-  </script>
+status.textContent = "送信中...";
+
+fetch(event.target.action, {
+method: form.method,
+body: data,
+headers: {
+'Accept': 'application/json'
+}
+}).then(response => {
+if (response.ok) {
+status.textContent = "メッセージを受け付けました。ありがとうございます！";
+form.reset();
+} else {
+response.json().then(data => {
+if (Object.hasOwn(data, 'errors')) {
+status.textContent = data["errors"].map(error => error["message"]).join(", ");
+} else {
+status.textContent = "送信に失敗しました。Formspreeの設定URLをご確認ください。";
+}
+})
+}
+}).catch(error => {
+status.textContent = "送信中にエラーが発生しました。";
+});
+});
+</script>
 </body>
 </html>
+
+
