@@ -206,16 +206,17 @@ line-height: 1.5;
 font-weight: 600;
 }
 /* 見出しの折り返し制御：まとまりの途中で改行させない */
-.nb { display: inline-block; white-space: nowrap; }
+.nb { display: inline-block; }
 
 /* Values */
 .values { background: var(--light-gray); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); width: 100%; }
 .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
 .value-card { padding: 24px; background: white; border: 1px solid var(--line); }
 .value-no { font: 11px "DM Sans"; color: var(--muted); }
-.value-icon { width: 40px; height: 40px; margin: 12px 0 8px; color: var(--ink); }
-.value-icon svg { display: block; width: 40px; height: 40px; }
-.value-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.value-head { display: flex; align-items: center; gap: 14px; margin: 12px 0 10px; }
+.value-icon { flex: none; width: 36px; height: 36px; color: var(--ink); }
+.value-icon svg { display: block; width: 36px; height: 36px; }
+.value-card h3 { font-size: 18px; font-weight: 600; margin: 0; }
 .value-card p { color: var(--muted); font-size: 13px; margin: 0; }
 
 /* Activities List */
@@ -298,7 +299,6 @@ font-size: 12px;
 .hero-lead .ln { display: block; white-space: nowrap; }
 .hero-lead br { display: none; }
 
-.nb { white-space: nowrap; }
 .intro h2 { font-size: clamp(20px, 5.6vw, 28px); }
 
 .section-wrap { padding: 40px 4%; }
@@ -353,7 +353,7 @@ PAGE 1: ABOUT (初期表示)
 <section class="section-wrap intro">
 <div class="section-kicker">01 — ABOUT US</div>
 <div class="intro-content">
-<h2><span class="nb">違和感や課題を伝え、新しい学校をつくる。</span><br><span class="nb">新しい学校をつくる。</span></h2>
+<h2><span class="nb">違和感や課題を伝え</span><span class="nb">新しい学校をつくる。</span></h2>
 <div>
 <p>学校には、さまざまな課題や困りごとがあります。</p>
 <p>edgeは、そんな日々の小さな違和感や悩みを持ち寄り、互いの経験や考えを共有する場です。正解を急がず、違いを認めながら、よりよい学校のあり方を一緒に考えていきます。</p>
@@ -372,6 +372,7 @@ PAGE 1: ABOUT (初期表示)
 <div class="value-grid">
 <article class="value-card">
 <span class="value-no">01</span>
+<div class="value-head">
 <div class="value-icon" aria-hidden="true">
 <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 <line x1="5" y1="20" x2="35" y2="20"/>
@@ -380,20 +381,24 @@ PAGE 1: ABOUT (初期表示)
 </svg>
 </div>
 <h3>対等に</h3>
+</div>
 <p>年齢や立場にとらわれず、一人ひとりの思いを聞きましょう。</p>
 </article>
 <article class="value-card">
 <span class="value-no">02</span>
+<div class="value-head">
 <div class="value-icon" aria-hidden="true">
 <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
 <circle cx="20" cy="20" r="14"/>
 </svg>
 </div>
 <h3>自由に</h3>
+</div>
 <p>堅苦しい決まりに縛られず、安心して話せる雰囲気をつくりましょう。</p>
 </article>
 <article class="value-card">
 <span class="value-no">03</span>
+<div class="value-head">
 <div class="value-icon" aria-hidden="true">
 <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
 <line x1="20" y1="6" x2="20" y2="34"/>
@@ -403,6 +408,7 @@ PAGE 1: ABOUT (初期表示)
 </svg>
 </div>
 <h3>一緒に</h3>
+</div>
 <p>経験や知恵を持ち寄り、できることから少しずつ形にしましょう。</p>
 </article>
 </div>
